@@ -6,14 +6,16 @@ export const sendTon = async (
   amount,
   message,
   tonweb,
-  keyPair
+  keyPair,
+  seqno
 ) => {
-  const seqno = (await wallet.methods.seqno().call()) || 0;
-  console.log({ seqno });
+  //   const seqno = (await wallet.methods.seqno().call()) || 0;
+  //   console.log({ seqno });
   const comment = new Uint8Array([
     ...new Uint8Array(4),
     ...new TextEncoder().encode(message),
   ]);
+  //   console.log({ comment });
   const payload = comment;
   const result = await wallet.methods
     .transfer({
@@ -24,7 +26,23 @@ export const sendTon = async (
       payload,
       sendMode: 3,
     })
-    .send();
+    .send()
+    .then((result) => {
+      console.log(`Transfer successful: ${seqno}`, { result });
+      return result;
+    })
+    .catch((error) => {
+      console.error("Transfer failed:", error);
+      throw error;
+    });
+
+  //   if (result && result.transaction) {
+  //     console.log(
+  //       `Transaction successful with hash: ${result.transaction.id.hash}`
+  //     );
+  //   } else {
+  //     console.log("Transaction failed or no hash returned");
+  //   }
 
   return result;
 };

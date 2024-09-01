@@ -8,5 +8,10 @@
     "address": "UQC3AvYyVDMMIlwXBPalx-3qzdgy3_KR-3eufgyTCWEm_MxB",
     "amount": "0.2",
     "message": "gift"
+  },
+  {
+    "address": "UQCIb_L5fxnbcnaXqmdZ0sxaNCFUj98WPzoBKeF_TOIbXBVi",
+    "amount": "0.1",
+    "message": "gift"
   }
 ]

@@ -1,12 +1,12 @@
 [
   {
-    "address": "UQCIb_L5fxnbcnaXqmdZ0sxaNCFUj98WPzoBKeF_TOIbXBVi",
-    "amount": "0.1",
+    "address": "UQC3AvYyVDMMIlwXBPalx-3qzdgy3_KR-3eufgyTCWEm_MxB",
+    "amount": "0.05",
     "message": "gift"
   },
   {
     "address": "UQC3AvYyVDMMIlwXBPalx-3qzdgy3_KR-3eufgyTCWEm_MxB",
-    "amount": "0.15",
+    "amount": "0.1",
     "message": "gift"
   }
 ]
